@@ -1,0 +1,348 @@
+/* ——— Global Reset & Base ——— */
+* { box-sizing: border-box; }
+body, h1, h2, h3, p, ul, nav, section, footer {
+  margin: 0; padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0d0d url("Image/WashU-RGB-600x400-1.jpg") no-repeat center/cover fixed;
+  color: #eee;
+}
+
+/* ——— Header, Footer ——— */
+.top-nav, .footer-nav {
+  text-align: center;
+  padding: 10px;
+  background: rgba(20,20,30,0.8);
+}
+.top-nav a, .footer-nav button {
+  color: #FFD166;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: bold;
+  background: none; border: none;
+  cursor: pointer;
+  transition: color .3s;
+}
+.top-nav a:hover,
+.footer-nav button:hover { color: #1abc9c; }
+
+footer {
+  position: fixed; bottom: 0; width: 100%;
+  background: rgba(20,20,30,0.9);
+  padding: 12px 0;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
+}
+
+/* ——— Hero ——— */
+.content1 { display: flex; flex-direction: column; }
+.hero-section {
+  display: flex; flex: 1;
+  min-height: calc(100vh - 100px); /* account for header/footer */
+}
+.left-column, .right-column { flex: 1; }
+.left-column {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 60px;
+  background: rgba(0,0,0,0.7);
+}
+.left-column h1 {
+  font-size: 3.5rem; font-weight: bold;
+}
+.cursor { color: #FFD166; animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.left-column p {
+  font-size: 1.1rem; margin: 20px 0;
+}
+.social-icons a img {
+  width: 36px; margin-right: 12px;
+  filter: brightness(1.2);
+  transition: transform .3s;
+}
+.social-icons a img:hover { transform: scale(1.1); }
+
+/* Semi‐transparent yellow overlay */
+.right-column {
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 209, 102, 0.5),
+    rgba(255, 204,   0, 0.5)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  border: 6px solid #0d0d0d;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  object-fit: cover;
+}
+
+/* ——— Buttons ——— */
+.btn-primary, .btn-secondary, .btn-link {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background .3s, color .3s;
+}
+.btn-primary {
+  background: #FFD166; color: #0d0d0d;
+}
+.btn-primary:hover { background: #e6b45c; }
+.btn-secondary {
+  background: rgba(255,255,255,0.2); color: #FFD166;
+  margin: 20px 0;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.3); }
+.btn-link {
+  background: none; color: #FFD166;
+}
+.btn-link:hover { color: #1abc9c; }
+
+/* ——— Letter Container ——— */
+.letter-container {
+  background: rgba(255,255,255,0.85);
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+.admit-image {
+  display: none; /* toggle via JS */
+  margin-top: 20px;
+  max-width: 90%; border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ——— Modal ——— */
+.modal {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white; color: #333;
+  border-radius: 8px; padding: 24px;
+  max-width: 600px; width: 90%;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  animation: slideDown .4s ease;
+}
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+.close-btn {
+  position: absolute; top: 12px; right: 16px;
+  background: none; border: none;
+  font-size: 1.5rem; cursor: pointer;
+  color: #888; transition: color .3s;
+}
+.close-btn:hover { color: #333; }
+
+/* ——— Transfer Table ——— */
+.transfer-content h2 { margin-bottom: 16px; }
+.transfer-content table {
+  width: 100%; border-collapse: collapse;
+  margin: 0 auto;
+}
+.transfer-content th, .transfer-content td {
+  padding: 12px 8px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  color: #333;
+}
+.transfer-content thead {
+  background: #2D2B59; color: #FFD166;
+}
+.transfer-content tr:nth-child(even) td {
+  background: #eceef3;
+}
+.transfer-content td.admit { color: #2ecc71; }
+.transfer-content td.reject { color: #e74c3c; }
+.transfer-content td.waitlist { color: #f39c12; }
+.transfer-content tr:hover td {
+  background: #d0d2e2;
+}
+
+/* ——— Utility & Visibility ——— */
+.modal.show, .admit-image.show { display: flex !important; }
+.admit-image.show { display: block; }
+.w{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.about-panel {
+  /* make the background only 70% white so the page image peeks through */
+  background: rgba(255,255,255,0.7);
+  /* optional: still blur whatever’s behind it, but less intensely */
+  backdrop-filter: blur(8px);
+  
+  /* spacing & shape */
+  padding: 40px 60px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 800px;
+  
+  /* lift it off the page */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  
+  /* make sure it’s above the big background splash */
+  position: relative;
+  z-index: 1;
+}
+
+.about-panel h2 {
+  /* keep your accent color for the heading */
+  color: #FFD166;
+  margin-bottom: 20px;
+}
+
+.about-panel p {
+  /* switch to a dark grey so it reads on that 70% white */
+  color: #2c3e50;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  /* subtle text-shadow can help if you still feel it’s washed out */
+  text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+}
+
+
+/* — Skills — */
+.skills-section {
+  background: rgba(255,255,255,0.05);
+  padding: 50px 20px;
+}
+.skills-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #FFD166;
+  margin-bottom: 30px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.skill-card {
+  background: rgba(0,0,0,0.6);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.skill-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+  filter: brightness(1.2);
+}
+.skill-card h3 {
+  font-size: 1rem;
+  color: #fff;
+}
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+/* — Featured Projects — */
+.projects-section {
+  padding: 50px 20px;
+}
+.projects-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #FFD166;
+  margin-bottom: 30px;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.project-card {
+  background: rgba(0,0,0,0.6);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+.project-info {
+  padding: 20px;
+}
+.project-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.project-info p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+.project-info .btn-primary {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+}
+/* Center the button */
+.btn-container {
+  text-align: center;
+  margin: 40px 0;    /* space above and below */
+}
+
+/* Base style */
+.btn-transfer {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;   /* pill shape */
+  background: linear-gradient(45deg, #FFD166, #F0A500);
+  color: #0d0d0d;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition:
+    background-position 0.4s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  background-size: 200% 200%;
+}
+
+/* Hover / focus states */
+.btn-transfer:hover,
+.btn-transfer:focus {
+  background-position: 100% 0%;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* Active (pressed) state */
+.btn-transfer:active {
+  transform: translateY(0);
+  box-shadow: 0 3px  8px rgba(0,0,0,0.2);
+}

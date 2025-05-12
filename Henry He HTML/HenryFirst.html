@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Henry He – Masterpiece</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="top-nav">
+      <a href="https://github.com/HenryWashuHe?tab=repositories">GitHub Projects</a> |
+      <a href="https://recruit-match.ncsasports.org/clientrms/athletes/9051563">Baseball Recruiting</a>
+    </nav>
+  </header>
+
+  <main class="content1">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="left-column">
+        <h3>Hi, my name is</h3>
+        <h1>Henry He<span class="cursor">|</span></h1>
+        <h4 class="w">and I'm a Computer Science & Math student at WashU</h4>
+        <div class="social-icons">
+			<!-- mailto will trigger the user’s email client -->
+			<a href="mailto:Hhernye@gmail.com">
+			  <img src="Image/Email.jpg" alt="Email">
+			</a>
+		  
+			<!-- External links must include https:// -->
+			<a href="https://www.linkedin.com/in/henry-he-40a44531b" target="_blank" rel="noopener noreferrer">
+			  <img src="Image/LinkedIn.webp" alt="LinkedIn">
+			</a>
+		  
+			<a href="https://www.instagram.com/hyenreh?igsh=NnhqeGE2Mnk4cHRn&utm_source=qr" target="_blank" rel="noopener noreferrer">
+			  <img src="Image/Instagram.png" alt="Instagram">
+			</a>
+		  </div>
+		  
+      </div>
+      <div class="right-column">
+        <img class="profile-pic" src="Image/Profile.JPG" alt="Profile Photo">
+      </div>
+    </section>
+
+    <!-- Transfer Results Modal Trigger -->
+    <button class="btn-transfer" onclick="showTable()">View Transfer Results</button>
+
+    <!-- Transfer Results Modal -->
+    <div id="Transfer" class="modal">
+      <div class="modal-content transfer-content">
+        <button class="close-btn" onclick="hideTable()">×</button>
+        <h2>Transfer Results</h2>
+        <table>
+          <thead>
+            <tr><th colspan="3">Henry He Transfer Applications</th></tr>
+            <tr>
+				
+              <th>College</th>
+              <th>Result</th>
+              <th>Letter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Northwestern</td><td class="admit">Admit!!!</td><td><a href="Transfer Decisons/Northwestern.pdf" target="_blank">View</a></td></tr>
+            <tr><td>Columbia</td><td class="admit">Admit!!!</td><td><a href="Transfer Decisons/Columbia.pdf"    target="_blank">View</a></td></tr>
+            <tr><td>Duke University</td><td class="reject">Reject</td><td><a href="Transfer Decisons/Duke University.pdf" target="_blank">View</a></td></tr>
+            <tr><td>Johns Hopkins Univ.</td><td class="reject">Reject</td><td><a href="Transfer Decisons/Johns Hopkins University.pdf" target="_blank">View</a></td></tr>
+            <tr><td>Stanford</td><td class="reject">Reject</td><td><a href="Transfer Decisons/Stanford.pdf"    target="_blank">View</a></td></tr>
+            <tr><td>The University of Chicago</td><td class="waitlist">Waitlist</td><td><a href="Transfer Decisons/The University of Chicago.pdf" target="_blank">View</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Admit Letter Reveal -->
+	  <!-- … your existing hero, modals, letter, etc. … -->
+
+  <!-- ========== About Me ========== -->
+  <section class="about-panel">
+    <h2>About Me</h2>
+    <p>
+      I’m Henry He, a rising sophomore at WashU studying Computer Science & Math.  
+      I love building AI-powered tools, pushing the limits of data visualization,  
+      and exploring how tech can amplify underrepresented voices.
+    </p>
+  </section>
+
+  <!-- ========== Skills ========== -->
+  <section class="skills-section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <img src="Image/Java.jpg" alt="JavaScript">
+        <h3>JavaScript</h3>
+      </div>
+      <div class="skill-card">
+        <img src="Image/Python.png" alt="Python">
+        <h3>Python</h3>
+      </div>
+      <div class="skill-card">
+        <img src="Image/Web.png" alt="React">
+        <h3>Web Dev</h3>
+      </div>
+      <div class="skill-card">
+        <img src="Image/git.png" alt="Git">
+        <h3>Git</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Featured Projects ========== -->
+  <section class="projects-section">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="Image/Sport.jpg" alt="AI Sports Coach">
+        <div class="project-info">
+          <h3>AI Sports Coach</h3>
+          <p>Real-time form feedback using vision APIs.</p>
+          <a href="#" class="btn-primary">View on GitHub</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="projects/lettuce-strike-thumb.jpg" alt="Lettuce Learn">
+        <div class="project-info">
+          <h3>Lettuce Learn</h3>
+          <p>Interactive history of the 1933 Filipino Lettuce Strike.</p>
+          <a href="#" class="btn-primary">See Demo</a>
+        </div>
+      </div>
+      <!-- add more .project-card blocks as needed -->
+    </div>
+  </section>
+
+  <!-- … then your footer … -->
+
+  </main>
+
+  <footer>
+    <p>© 2025 Henry He</p>
+    <nav class="footer-nav">
+      <button class="btn-link" onclick="navLinkedin()">LinkedIn</button> |
+      <button class="btn-link" onclick="showContactModal()">Contact</button>
+    </nav>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="hideContactModal()">×</button>
+      <h2>Contact Information</h2>
+      <p>Phone: 314-657-5517</p>
+      <p><a href="mailto:Hhernye@gmail.com">Email Henry</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
